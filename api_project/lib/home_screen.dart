@@ -59,16 +59,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Builder(builder: (context) {
                     var pro = context.watch<GetWeatherProvider>();
-                    var temp =
-                        ((pro.weather_info!.main!.temp!) - 273.15).toInt();
+                    
                     return pro.loading
                         ? Center(
                             child: CircularProgressIndicator.adaptive(),
                           )
                         : Text(
-                            '$temp\u00B0',
+                            '${((pro.weather_info!.main!.temp!) - 273.15).toInt()}\u00B0',
                             style: TextStyle(
-                                fontSize: 65,
+                                fontSize: 165,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold, fontFamily: 'Poppins-Light'),
                           );

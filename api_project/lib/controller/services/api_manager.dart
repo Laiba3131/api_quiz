@@ -13,11 +13,10 @@ class ApiManager{
   static getWeatherData() async
   {
     try{
-      var Url = Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=Lahore&appid=b189f31bd264510e4848acac84074ab4');
+      var Url = Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=London&appid=b189f31bd264510e4848acac84074ab4');
       var response = await http.get(Url);
        var res = jsonDecode(response.body);
-       var tem= GetWeatherModel.fromJson(res);
-       //debugger();
+       var tem= GetWeatherModel.fromJson(res);       
         return tem;
     } catch(e)
     {
